@@ -21,7 +21,7 @@ var akamaiAnalyticsConfigUrl  = 'INSERT-CONFIG-PATH-HERE';
 var akamaiAnalytics = new JS_AkamaiMediaAnalytics("http://media-analytics.akamaized.net/analyticsplugin/configuration/SampleBeacon.xml");
 ```
 
-### Setup Customm Data
+### Setup Custom Data
 
 ```html
 var akamaiAnalytics = new JS_AkamaiMediaAnalytics("http://media-analytics.akamaized.net/analyticsplugin/configuration/SampleBeacon.xml");
