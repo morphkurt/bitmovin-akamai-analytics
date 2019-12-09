@@ -46,14 +46,46 @@ akamaiAnalytics.disableLocation()
 ### Handling Player Events
 
 ```
-addEventHandler('play', function(data) { 
-  if (akamaiAnalytics){
-    akamaiAnalytics.handlePlaying();
-  }
-});
-addEventHandler('pause', function(data) { 
-  if (akamaiAnalytics){
-    akamaiAnalytics.handlePause();
-  }
-});
+   player.on('play', function (o) {
+      log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePlaying()"  +++');
+      if (akamaiAnalytics) {
+        akamaiAnalytics.handlePlaying();
+      }
+    });
+    player.on('paused', function (o) {
+      log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePause()" +++');
+      if (akamaiAnalytics) {
+        akamaiAnalytics.handlePause();
+      }
+    });
+    player.on("seeked", function () {
+      if (akamaiAnalytics) {
+        log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleSeekStart()" +++');
+        akamaiAnalytics.handleSeekStart();
+      }
+    });
+    player.on("adstarted", function () {
+      if (akamaiAnalytics) {
+      var adInfoObject = {};
+      adInfoObject["adDuration"] = adDuration; // duration is in milliseconds
+      akamaiAnalytics.handleAdStarted(adObject);
+      log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleAdStarted" +++');  
+      }
+    });
+    player.on("adskipped", function () {
+      if (akamaiAnalytics) {
+        akamaiAnalytics.handleAdSkipped()
+      log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleAdSkipped()" +++');  
+      }
+    });
+     player.on("adfinished", function () {
+      if (akamaiAnalytics) {
+        akamaiAnalytics.handleAdComplete();
+      log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleAdComplete()" +++');  
+      }
+    });
+    
+    
+    
+
 ```
