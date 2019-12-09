@@ -45,14 +45,14 @@ akamaiAnalytics.disableLocation()
 
 ### Handling Player Events
 
-```
+```javascript
    player.on('play', function (o) {
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePlaying()"  +++');
       if (akamaiAnalytics) {
         akamaiAnalytics.handlePlaying();
       }
     });
-    player.on('paused', function (o) {
+    player.on('paused', function () {
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePause()" +++');
       if (akamaiAnalytics) {
         akamaiAnalytics.handlePause();
