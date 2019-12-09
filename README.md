@@ -48,46 +48,42 @@ akamaiAnalytics.disableLocation()
 Bitmovin player provides event handles where Akamai Analytics beacon can be fired off. Sample events to capture play / pause / seek / adstart / adskip / adfinish has been shown below
 
 ```javascript
-   player.on('play', function (o) {
+  player.on('play', function (o) {
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePlaying()"  +++');
       if (akamaiAnalytics) {
         akamaiAnalytics.handlePlaying();
       }
-    });
-    player.on('paused', function () {
+  });
+  player.on('paused', function () {
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePause()" +++');
       if (akamaiAnalytics) {
         akamaiAnalytics.handlePause();
       }
-    });
-    player.on("seeked", function () {
+  });
+  player.on("seeked", function () {
       if (akamaiAnalytics) {
         log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleSeekStart()" +++');
         akamaiAnalytics.handleSeekStart();
       }
-    });
-    player.on("adstarted", function () {
+  });
+  player.on("adstarted", function () {
       if (akamaiAnalytics) {
       var adInfoObject = {};
       adInfoObject["adDuration"] = adDuration; // duration is in milliseconds
       akamaiAnalytics.handleAdStarted(adObject);
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleAdStarted" +++');  
       }
-    });
-    player.on("adskipped", function () {
+  });
+  player.on("adskipped", function () {
       if (akamaiAnalytics) {
         akamaiAnalytics.handleAdSkipped()
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleAdSkipped()" +++');  
       }
-    });
-     player.on("adfinished", function () {
+  });
+  player.on("adfinished", function () {
       if (akamaiAnalytics) {
         akamaiAnalytics.handleAdComplete();
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handleAdComplete()" +++');  
       }
-    });
-    
-    
-    
-
+  });
 ```
