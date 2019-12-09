@@ -1,6 +1,6 @@
 # Connect the Bitmovin Adaptive Streaming Player with Akamai Analytics
 
-The repo has been forked from bitmovin/bitmovin-player-akamai-analytics. Guide has been modified to reflect the latest Akamai documentation to integrate with generic javascript based player
+This is a guide how to integrate Akamai analytics with Bitmovin player
 
 ### Include the standard Akamai Analytics Plugin
 
