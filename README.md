@@ -45,6 +45,8 @@ akamaiAnalytics.disableLocation()
 
 ### Handling Player Events
 
+Bitmovin player provides event handles where Akamai Analytics beacon can be fired off. Sample events to capture play / pause / seek / adstart / adskip / adfinish has been shown below
+
 ```javascript
    player.on('play', function (o) {
       log('+++ akamaiAnalytics beacon fired "akamaiAnalytics.handlePlaying()"  +++');
